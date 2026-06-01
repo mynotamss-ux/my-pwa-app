@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>편신탐색 - 편의점 신상 추적</title>
+    <meta name="theme-color" content="#111111" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="편신탐색" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Daily convenience radar</p>
+          <h1>편신탐색</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button install-button" id="installButton" aria-label="앱 설치" hidden>
+            <span aria-hidden="true">＋</span>
+          </button>
+          <button class="icon-button" id="refreshButton" aria-label="오늘 업데이트 확인">
+            <span aria-hidden="true">↻</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="location-strip" aria-label="구매 기준 지역">
+        <button class="location-pill active" data-region="서울 강남구">서울 강남구</button>
+        <button class="location-pill" data-region="서울 마포구">서울 마포구</button>
+        <button class="location-pill" data-region="부산 해운대구">부산 해운대구</button>
+      </section>
+
+      <section class="search-panel" aria-label="상품 검색">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="상품명, 브랜드, 카테고리 검색" autocomplete="off" />
+        </label>
+        <div class="quick-tabs" role="tablist" aria-label="상품 필터">
+          <button class="tab active" data-filter="all">전체</button>
+          <button class="tab" data-filter="exclusive">독점</button>
+          <button class="tab" data-filter="new">신상품</button>
+          <button class="tab" data-filter="online">온라인</button>
+          <button class="tab" data-filter="offline">오프라인</button>
+        </div>
+      </section>
+
+      <section class="status-card" aria-label="업데이트 상태">
+        <div>
+          <span class="status-dot"></span>
+          <strong id="syncTitle">오늘 업데이트 대기</strong>
+          <p id="syncCopy">공식 상품/행사 페이지와 앱 구매 채널 기준으로 매일 체크하도록 설계했습니다.</p>
+        </div>
+        <span class="sync-time" id="syncTime">--:--</span>
+      </section>
+
+      <section class="store-row" aria-label="편의점 선택">
+        <button class="store-chip active" data-store="all">전체</button>
+        <button class="store-chip cu" data-store="CU">CU</button>
+        <button class="store-chip gs" data-store="GS25">GS25</button>
+        <button class="store-chip seven" data-store="7-Eleven">7-Eleven</button>
+        <button class="store-chip emart" data-store="emart24">emart24</button>
+      </section>
+
+      <section class="hero-feed">
+        <div class="feed-heading">
+          <div>
+            <h2>오늘 확인할 신상</h2>
+            <p id="resultCount">0개 상품</p>
+          </div>
+          <select id="sortSelect" aria-label="정렬">
+            <option value="fresh">최신순</option>
+            <option value="distance">가까운 구매처순</option>
+            <option value="price">낮은 가격순</option>
+          </select>
+        </div>
+        <div class="product-list" id="productList"></div>
+      </section>
+
+      <section class="purchase-map" aria-label="구매 가능 채널">
+        <h2>구매 채널 체크</h2>
+        <div class="channel-grid" id="channelGrid"></div>
+      </section>
+
+      <section class="source-panel" aria-label="업데이트 출처">
+        <div class="feed-heading">
+          <div>
+            <h2>데일리 체크 출처</h2>
+            <p>자동화 시 우선순위가 높은 공식 채널</p>
+          </div>
+        </div>
+        <div class="source-list">
+          <a href="https://cu.bgfretail.com/product/product.do" target="_blank" rel="noreferrer">CU 공식 상품</a>
+          <a href="https://gs25.gsretail.com/gscvs/ko/products/event-goods" target="_blank" rel="noreferrer">GS25 공식 행사/상품</a>
+          <a href="https://gs25.gsretail.com/gscvs/ko/store-services/woodongs" target="_blank" rel="noreferrer">우리동네GS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.bgfcu.membership&hl=ko" target="_blank" rel="noreferrer">포켓CU 앱</a>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="앱 메뉴">
+      <button class="active"><span aria-hidden="true">⌂</span>홈</button>
+      <button><span aria-hidden="true">◎</span>근처</button>
+      <button><span aria-hidden="true">☆</span>찜</button>
+      <button><span aria-hidden="true">☰</span>로그</button>
+    </nav>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "편신탐색 - 편의점 신상 추적",
+  "short_name": "편신탐색",
+  "description": "한국 편의점 신상품과 독점상품의 구매 가능 채널을 확인하는 모바일 앱",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f8f4",
+  "theme_color": "#111111",
+  "lang": "ko-KR",
+  "categories": ["shopping", "food", "lifestyle"],
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

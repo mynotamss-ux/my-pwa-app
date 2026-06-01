@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/28456054/README.md)
 # 편신탐색
 
 한국 편의점 신상품/독점상품을 매일 확인하고, 온라인/오프라인 구매 가능성을 한눈에 보는 로컬 웹앱 프로토타입입니다.
@@ -8,6 +7,14 @@
 `index.html`을 브라우저에서 열면 됩니다. 별도 서버나 패키지 설치가 필요 없습니다.
 
 휴대폰에서 앱처럼 설치하려면 HTTPS 주소로 배포한 뒤 브라우저에서 열어 홈 화면에 추가하면 됩니다. 이 프로젝트는 `manifest.webmanifest`와 `sw.js`가 포함된 PWA입니다.
+
+## GitHub Pages 배포
+
+1. GitHub 저장소 `Settings > Pages`에서 `Source`를 `GitHub Actions`로 설정합니다.
+2. 이 파일들을 `main` 또는 `master` 브랜치에 push합니다.
+3. `Actions` 탭에서 `Deploy PWA to GitHub Pages`가 성공하면 Pages URL이 생성됩니다.
+4. 휴대폰에서 해당 HTTPS URL을 엽니다.
+5. Android Chrome은 주소창/메뉴의 `앱 설치`를 누릅니다. iPhone Safari는 공유 버튼에서 `홈 화면에 추가`를 누릅니다.
 
 ## 데일리 업데이트 기준
 
